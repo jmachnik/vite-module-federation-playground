@@ -1,0 +1,26 @@
+{
+  "name": "microfrontends-poc",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "workspaces": [
+    "host",
+    "app-example"
+  ],
+  "scripts": {
+    "build": "pnpm  --parallel --filter \"./**\" build",
+    "serve": "pnpm  --parallel --filter \"./**\" preview",
+    "build:remotes": "pnpm --parallel --filter \"./remote\" build",
+    "serve:remotes": "pnpm --parallel --filter \"./remote\" serve",
+    "dev:hosts": "pnpm --filter \"./host\" dev",
+    "stop": "kill-port --port 5000,5001"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@originjs/vite-plugin-federation": "^1.2.1",
+    "vite": "^4.1.0"
+  }
+}
