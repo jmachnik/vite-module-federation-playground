@@ -4,9 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "dev": "vite --port 5000 --strictPort",
+    "build": "vite build --watch",
+    "preview": "vite preview --port 5000 --strictPort",
+    "serve": "vite preview --port 5000 --strictPort"
   },
   "dependencies": {
     "react": "^18.2.0",
